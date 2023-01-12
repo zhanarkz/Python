@@ -17,3 +17,15 @@
 # 4 2 3 1 )
 
 # Output: 9
+
+import random
+a = int(input('кол-во грядок '))
+kust =[random.randint(1, 10) for i in range(a)]
+print('на кустах выросли ягоды', kust)
+
+count = list()
+for i in range(len(kust) - 1):
+    count.append(kust[i - 1] + kust[i] + kust[i + 1])
+count.append(kust[-2] + kust[-1] + kust[0])
+
+print('max ', max(count))
